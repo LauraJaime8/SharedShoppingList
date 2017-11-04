@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Lista de la compra compartida</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Custom CSS -->
+<style>
+body {
+	padding-top: 60px;
+	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+</style>
+
+<!-- jQuery Version 1.11.1 -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				
+				<!-- <a href="javascript:indexContent()" class="pull-left"><img
+					class="img-responsive" alt="Test Case Generator"
+					src="image/logoWhiteDefault.png" /></a>   -->
+			</div>
+			<!-- <div class="collapse navbar-collapse">
+				<div id="divAccount" class="nav navbar-nav navbar-right">
+					<ul>
+						<li style="width:110%; margin-top:10%;"><button style="font-size:35px;" id="buttons" class="btn btn-primary btn-lg" type="button" onclick="formLogin()">Log in</button>
+
+						</li>
+					</ul>
+				</div>
+
+			</div>  -->
+
+		</div>
+		<!-- /.container -->
+	</nav>
+
+	<!-- Page Content -->
+	<!-- <ol id="breadcrumb" class="breadcrumb"
+		style="margin-bottom: 5px; margin-left: 2%">
+		<li><a href="javascript:indexContent()">Home</a></li>
+	</ol>   -->
+	<!-- /.container -->
+
+
+<div id="content" class="container-fluid">
+		<div class="row" id="tdLogin">
+			<div id="listaLogin" class="col-md-6 col-md-offset-3">
+					<div class="row">
+						<div class="col-xs-9">
+						<label id="listening"></label>
+	         				<label>Login</label>
+	         			</div>
+	         		</div>
+					<div class="row">
+						<div class="col-xs-5">
+	         				<input class="form-control margin-bootom-sm" id="cajaEmailLogin" type="text" placeholder="Usuario">
+	         			</div>
+	         		</div>
+	         		<div class="row">
+	         			<div class="col-xs-5">
+	         				<input class="form-control" id="cajaPwd" type="password" placeholder="Contraseña">
+	         			</div>
+	         		</div>
+	         		<div class="row">
+	         			<div class="col-xs-6">
+	         				<button type="button" id="btnLogin" class="btn btn-primary " onclick="javascript:usuario.login()">Aceptar</button>
+	         			</div>
+	         		</div>
+	         		<button type="button" id="olvidasteContrasena" class="btn btn-link" onclick="javascript:olvidasteContrasena()">¿Olvidaste tu contraseña?</button>
+	         		<button type="button" id="btnRegistrar" class="btn btn-link" onclick="javascript:mostrarRegistrar()">Regístrate</button>
+	         	
+	         </div>
+	    </div>
+	</div>
+	
+	
+	<div id="tdBienvenido" class="container">
+		<div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Bienvenido a la aplicación</strong></div>
+	</div>
+
+	<div id="content" class="text-right">
+		<div class="row" id="tdMostrarEmail">
+		</div>
+	</div>
+	
+	
+	<div id="content" class="container-fluid">
+		<div class="row" id="tdRegistrar">
+			<div id="listaRegistrar" class="col-md-6 col-md-offset-3">
+				<div class="row">
+					<div class="col-xs-9">
+						<label>Introduzca los siguientes datos:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-5">
+                 		<input class="form-control" id="cajaEmailRegistro" type="email" placeholder="E-mail">
+              		</div>    
+              	</div>       
+              	<div class="row">		
+               		<div class=" col-lg-5">
+                		<input class="form-control" id="cajaPwd1" type="password" placeholder="Contraseña">
+               		</div>
+               	</div>
+               	<div class="row">
+               		<div class=" col-lg-5">
+                 		<input class="form-control" id="cajaPwd2" type="password" placeholder="Repita contraseña">
+               		</div>
+               	</div>
+               	<div class="row">
+               		<div class=" col-lg-5">
+                 		<button type="button" id="btnRegistrar" class="btn btn-primary" onclick="javascript:usuario.registrar()">Registrar</button>
+                 		<button type="button" id="btnVolver" class="btn btn-primary" onclick="javascript:mostrarLogin()">Volver</button>
+                		</div>
+               	</div>
+			</div>	
+		</div>
+	</div>
+	
+	
+	<div id="content" class="container-fluid">
+		<div class="row" id="tdOlvidastePass">
+			<div id="listaOlvidaste" class="col-md-6 col-md-offset-3">
+				<div class="row form-group" id="olvidastePass">
+					<div class="col-lg-3">
+						<label>Escriba su correo y en unos minutos recibirá un email para reestablecer su contraseña</label>
+					</div>
+					<div class=" col-lg-5">
+                 		<input class="form-control" id="cajaEmailOlvidado" type="email" placeholder="E-mail">
+              		</div >
+                 		<button type="button" id="btnEnviarMail" class="btn btn-primary" onclick="javascript:olvidasteContrasena()">Enviar correo</button>				
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	
+	
+
+	<div class="container">
+		<div id="tdNuevaLista" class="table-responsive">  
+			<div class=" col-lg-6">
+                 <input class="form-control" id="cajaNuevaLista" type="text" placeholder="Nombre de la lista">
+            </div>
+			<button type="button" id="btnNuevaLista" class="btn btn-primary" onclick="javascript:usuario.crearLista()">Crear nueva lista</button>
+			<button type="button" id="btnEliminarLista" class="btn btn-danger" onclick="javascript:usuario.eliminarLista()">Eliminar lista (caja de texto)</button>
+			
+	 	</div>
+	</div> 
+	 
+	
+	<div class="container">
+		<div id="tdMostrarListas" class="table-responsive" >  
+		<div class=" col-lg-6">	
+			<label>Listas creadas</label>
+		</div>
+
+	 	</div>
+	</div> 
+	 
+	 
+	<div class="row">
+		<div class="col-xs-6">
+			<div id="panelListas" class="panel panel-info">
+				<div id="nombreLista" class="panel-heading">Listas creadas</div>
+  		
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="table-responsive">
+  		<table id="tableLista" class="table" border="1">
+ 		 </table>
+	</div>
+	
+	
+	<div class="row">
+  		<div class="col-xs-6 col-md-4">
+			<div class="container">
+				<div id="tdMiembros" class="table-responsive">  	
+				<label>Miembros de la lista</label>		
+				<button type="button" id="btnInvitar" class="btn btn-primary" onclick="javascript:usuario.invitar()">Invitar a alguien</button>
+				<button type="button" id="btnAbandonar" class="btn btn-danger" onclick="javascript:usuario.abandonarLista()">Abandonar lista</button>
+								
+				<input class="form-control" id="emailInvitado" type="email" placeholder="Email del invitado">
+	 		</div>
+		</div> 
+		</div>
+	</div>
+	
+
+	<div id="content" class="container-fluid">
+		<div class="row" id="tdAddProducto">
+			<div class="col-xs-6 col-md-4">
+					<div class="row">
+						<div class="col-xs-9">
+						<label id="listening"></label>
+	         				<label>Añadir elemento a la lista</label>
+	         			</div>
+	         		</div>
+					<div class="row">
+						<div class="col-xs-5">
+	         				<input class="form-control margin-bootom-sm" id="nombreProducto" type="text" placeholder="Nombre del producto">
+	         			</div>
+	         		</div>
+	         		<div class="row">
+	         			<div class="col-xs-5">
+	         				<input class="form-control" id="cantidadDeseada" type="number" placeholder="Cantidad deseada">
+	         			</div>
+	         		</div>
+	         			<div class="row">
+	         			<div class="col-xs-5">
+	         				<input class="form-control" id="cantidadExistente" type="number" placeholder="Cantidad existente">
+	         			</div>
+	         		</div>
+	         		<div class="row">
+	         			<div class="col-xs-5">
+	         				<button type="button" id="btnAnadirProducto" class="btn btn-primary " onclick="javascript:lista.insertarProducto()">Añadir producto</button>	 
+	         				<button type="button" id="btnEditarProducto" class="btn btn-primary" onclick="javascript:lista.editarProducto()">Editar producto</button>
+	         				        					         				
+	         			</div>
+	         		</div>
+	         </div>
+	    </div>
+	</div>
+	
+	
+
+	
+	<!-- Footer -->
+	<footer class="footer">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul style="padding-left: 40%" class="nav navbar-nav">
+					<li><a>Sobre nosotros</a></li>
+					<li><a>Sobre la página</a></li>
+					<li><a>Contacto</a></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p style="color: white; padding-left: 47%">Copyright &copy;
+						2016</p>
+				</div>
+			</div>
+		</nav>
+	</footer>
+
+
+
+	<script src="scripts/dominio.js"></script>
+	<script src="scripts/ws.js"></script>
+	<script>
+		var usuario=new Usuario();
+		var lista=null;
+		usuario.conectar();
+		var tdLogin=document.getElementById("tdLogin");
+		var tdRegistrar=document.getElementById("tdRegistrar");
+		var tdNuevaLista=document.getElementById("tdNuevaLista");
+		tdOlvidastePass.setAttribute("style", "display:none");
+		tdRegistrar.setAttribute("style", "display:none");
+		tdNuevaLista.setAttribute("style", "display:none");
+		var tdCargarListas=document.getElementById("tdCargarListas");
+		var tdAddProducto = document.getElementById("tdAddProducto");
+		tdAddProducto.setAttribute("style", "display:none");
+		var tdMostrarListas=document.getElementById("tdMostrarListas");
+		tdMostrarListas.setAttribute("style", "display:none");
+		var tdMiembros = document.getElementById("tdMiembros");
+		tdMiembros.setAttribute("style", "display:none");
+		var panelListas = document.getElementById("panelListas");
+		panelListas.setAttribute("style", "display:none");
+		var tdBienvenido = document.getElementById("tdBienvenido");
+		tdBienvenido.setAttribute("style", "display:none");
+		
+
+			
+			
+		function mostrar(idLista) {
+			lista=new Lista();
+			lista.cargar(idLista);
+		}
+		
+		
+		
+		function mostrarMiembros(idLista){
+			lista=new Lista();
+			lista.cargarMiembros(idLista);
+		}
+		function mostrarUsuario(id) {
+			usuario=new Usuario();
+			usuario.getEmail();
+		}
+		
+		function mostrarLogin(){
+			tdLogin.setAttribute("style", "display:visible");
+			tdRegistrar.setAttribute("style", "display:none");
+			tdMostrarListas.setAttribute("style", "display:none");
+
+		}
+		function usuarioNuevo() {
+			tdLogin.setAttribute("style", "display:none");
+			tdRegistrar.setAttribute("style", "display:none");
+			tdNuevaLista.setAttribute("style", "display:visible");
+			tdCargarListas.setAttribute("style", "display:visible");
+			tdMostrarListas.setAttribute("style", "display:none");
+
+		}
+		
+		function olvidasteContrasena(){
+			tdLogin.setAttribute("style", "display:none");
+			tdRegistrar.setAttribute("style", "display:none");
+			tdOlvidastePass.setAttribute("style", "display:visible");
+			tdMostrarListas.setAttribute("style", "display:none");
+
+		}
+		
+		function mostrarRegistrar(){
+			tdLogin.setAttribute("style", "display:none");
+			tdOlvidastePass.setAttribute("style", "display:none");
+			tdRegistrar.setAttribute("style", "display:visible");
+			tdMostrarListas.setAttribute("style", "display:none");
+
+		}
+		
+		
+
+		function guardarProducto(idProducto) {
+			var nombre=document.getElementById("nombreProducto").value;
+			var cantidadDeseada=parseInt(document.getElementById("cantidadDeseada").value);
+			var cantidadExistente=parseInt(document.getElementById("cantidadExistente").value); 
+			
+			var p = {
+					idLista : lista.idLista,
+					idProducto : idProducto, 
+					nombre : nombre, 
+					cantidadDeseada : cantidadDeseada, 
+					cantidadExistente : cantidadExistente
+			};
+			var linea="p=" + JSON.stringify(p);
+			
+			$.post("guardarProducto.jsp", linea, function(resultado, estado) {
+				if (estado=="success") {
+					mostrar(lista.idLista);
+				}
+			})
+		}
+		
+		
+		/*<div class="row">
+		<div class="col-xs-6 col-sm-4">
+			<div id="panelListas" class="panel panel-info">
+  				<div id="nombreLista" class="panel-heading">
+  				</div>
+			</div>
+		</div>
+	</div>*/
+	
+		/*indexContent();
+		function indexContent() {			
+			if (sessionStorage.getItem("email") != null) {
+				$("#divAccount").load("FormSession.html");
+				$("#content").load("loginContent.html");
+				document.getElementById("breadcrumb").style.visibility="";
+			}else{
+				$("#content").load("bindex.html");
+				document.getElementById("breadcrumb").style.visibility="hidden";
+			//}
+			var bc=document.getElementById("breadcrumb");
+		    var nodos=bc.childNodes;
+		    for (var i=nodos.length-1;i>1;i--){
+		      bc.removeChild(nodos[i]);
+		    }
+		    var li=document.createElement("li");
+		    li.innerHTML="My Dashboard";
+		    li.value=-1;
+		    bc.setAttribute("class","breadcrumb");
+		    li.setAttribute("class","active");
+		    bc.appendChild(li); 
+		}*/
+	</script>
+
+</body>
+
+</html>
+	
